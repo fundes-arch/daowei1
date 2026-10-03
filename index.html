@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUXURY RECYCLE | 全球顶级奢侈品专业回收与鉴定中心</title>
     <style>
-        /* 基础样式与变量定义 */
         :root {
             --bg-color: #0c0c0c;
             --card-bg: #141414;
@@ -24,472 +23,234 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
         }
 
-        /* 顶部奢华导航栏 */
+        /* 顶部导航与标语 */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: rgba(12, 12, 12, 0.95);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(12px);
+            text-align: center;
+            padding: 50px 20px;
             border-bottom: 1px solid var(--border-color);
+            background: linear-gradient(to bottom, #111, #0c0c0c);
         }
 
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
+        header h1 {
+            color: var(--gold);
+            font-size: 2.8rem;
             letter-spacing: 3px;
-            color: #fff;
-            text-transform: uppercase;
-        }
-        .logo span {
-            color: var(--gold);
+            margin-bottom: 12px;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav a {
-            color: #ccc;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        nav a:hover {
-            color: var(--gold);
-        }
-
-        .nav-btn {
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: #000;
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-weight: 700;
-            margin-left: 30px;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-        .nav-btn:hover {
-            transform: scale(1.05);
-            opacity: 0.9;
-            color: #000;
-        }
-
-        /* 顶部横幅 (Hero Section) */
-        .hero {
-            height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
-            margin-top: 70px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.2rem);
-            font-weight: 900;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, #fff, var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
+        header p {
             color: var(--text-secondary);
-            max-width: 700px;
-            margin-bottom: 40px;
-            letter-spacing: 1px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            padding: 14px 35px;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: #000;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 1px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
-        }
-
-        .btn-outline {
-            display: inline-block;
-            padding: 14px 35px;
-            background: transparent;
-            color: #fff;
-            border: 1px solid var(--gold);
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            letter-spacing: 1px;
-            transition: background 0.2s;
-        }
-        .btn-outline:hover {
-            background: rgba(212, 175, 55, 0.1);
-        }
-
-        /* 核心优势按钮信息栏 */
-        .features-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            max-width: 1400px;
-            margin: -40px auto 0;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
-        .feature-box {
-            background: #181818;
-            border: 1px solid var(--border-color);
-            padding: 25px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-        .feature-box h3 {
-            color: var(--gold);
-            margin-bottom: 8px;
             font-size: 1.1rem;
-        }
-        .feature-box p {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
         }
 
-        /* 500款奢华作品大图展示区 */
-        .gallery {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 100px 20px;
+        .contact-bar {
+            display: inline-block;
+            border: 1px solid var(--gold);
+            padding: 10px 30px;
+            color: var(--gold-light);
+            border-radius: 30px;
+            font-size: 0.95rem;
+            background: rgba(212, 175, 55, 0.05);
+            letter-spacing: 1px;
         }
 
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 20px;
+        /* 展柜网格区 */
+        .container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
         .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: 1px;
+            color: var(--gold);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
             border-left: 4px solid var(--gold);
-            padding-left: 15px;
+            padding-left: 12px;
+            letter-spacing: 1px;
         }
 
-        .section-desc {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* 大图网格设计 (固定每张大图展示) */
-        .grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 25px;
         }
 
-        .card {
+        .product-card {
             background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(212, 175, 55, 0.2);
             border-color: var(--gold);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
         }
 
-        /* 核心大图容器：尺寸显著加大，突出视觉冲击力 */
-        .card-img-wrap {
+        .product-img-box {
             width: 100%;
-            height: 320px;
+            height: 240px;
             background-color: #1a1a1a;
             position: relative;
             overflow: hidden;
         }
 
-        .card-img {
+        .product-img-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .card:hover .card-img {
-            transform: scale(1.08);
-        }
-
-        .price-tag {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.8);
-            color: var(--gold);
-            padding: 5px 12px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border-radius: 20px;
-            border: 1px solid var(--gold);
-        }
-
-        .card-info {
-            padding: 20px;
-        }
-
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .card-desc {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            margin-bottom: 15px;
-        }
-
-        .card-btn {
             display: block;
-            width: 100%;
-            padding: 10px;
-            background: transparent;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: #fff;
-            text-align: center;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: background 0.2s, border-color 0.2s, color 0.2s;
+            transition: transform 0.5s ease;
         }
 
-        .card-btn:hover {
-            background: var(--gold);
-            border-color: var(--gold);
-            color: #000;
+        .product-card:hover .product-img-box img {
+            transform: scale(1.05);
         }
 
-        /* 页脚信息与按钮区 */
-        footer {
-            background-color: #080808;
-            border-top: 1px solid var(--border-color);
-            padding: 60px 20px 30px;
-            text-align: center;
-            color: var(--text-secondary);
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto 40px;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 30px;
-            text-align: left;
-        }
-
-        .footer-col h4 {
+        .tag-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.75);
             color: var(--gold);
-            margin-bottom: 15px;
-            font-size: 1rem;
+            border: 1px solid var(--gold);
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            border-radius: 4px;
             letter-spacing: 1px;
         }
 
-        .footer-col ul {
-            list-style: none;
+        .product-info {
+            padding: 16px;
         }
 
-        .footer-col ul li {
-            margin-bottom: 10px;
+        .product-title {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        .footer-col ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-        }
-
-        .footer-col ul li a:hover {
-            color: #fff;
-        }
-
-        .copyright {
-            border-top: 1px solid rgba(255,255,255,0.05);
-            padding-top: 20px;
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
         }
 
-        @media (max-width: 768px) {
-            nav { display: none; }
-            .hero-btns { flex-direction: column; width: 100%; padding: 0 20px; }
-            .btn-primary, .btn-outline { width: 100%; text-align: center; }
+        .price {
+            color: #ff4d4f;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .action-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: transparent;
+            border: 1px solid var(--gold-dark);
+            color: var(--gold-light);
+            padding: 8px 0;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: var(--gold);
+            color: #000;
+            border-color: var(--gold);
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: 80px;
+            background: #080808;
         }
     </style>
 </head>
 <body>
 
-    <!-- 顶部全套按钮导航栏 -->
     <header>
-        <div class="logo">LUXURY<span>.RECYCLE</span></div>
-        <nav>
-            <a href="#works">典当回收大厅</a>
-            <a href="#valuation">在线极速估价</a>
-            <a href="#process">顺丰顺丰包邮</a>
-            <a href="#stores">全国实体门店</a>
-            <a href="#contact">专业鉴定团队</a>
-            <a href="#valuation" class="nav-btn">立即变现</a>
-        </nav>
+        <h1>LUXURY RECYCLE</h1>
+        <p>全球顶级奢侈品专业回收与鉴定中心 · 官方典藏展柜</p>
+        <div class="contact-bar">
+            📞 24小时专业奢品估价与回收热线 / 鉴定咨询
+        </div>
     </header>
 
-    <!-- 首页横幅 -->
-    <section class="hero">
-        <h1>全球顶级奢侈品专业回收与变现中心</h1>
-        <p>专业鉴定，极速打款。高价回收名包、名表、黄金首饰及限量潮玩，让您的闲置奢侈品瞬间重获价值。</p>
-        <div class="hero-btns">
-            <a href="#works" class="btn-primary">浏览 500 款热门回收库</a>
-            <a href="#valuation" class="btn-outline">免费在线估价</a>
-        </div>
-    </section>
-
-    <!-- 核心服务按钮信息栏 -->
-    <div class="features-bar">
-        <div class="feature-box">
-            <h3>15分钟极速报价</h3>
-            <p>专业资深鉴定师在线评估，精准给价拒绝套路</p>
-        </div>
-        <div class="feature-box">
-            <h3>顺丰保价包邮</h3>
-            <p>全程高额顺丰保价配送，运费由我们全额承担</p>
-        </div>
-        <div class="feature-box">
-            <h3>当面验货秒打款</h3>
-            <p>收到货物后现场专业验货，确认无误秒级转账</p>
-        </div>
-        <div class="feature-box">
-            <h3>100% 正品保障</h3>
-            <p>中检集团资质认证，多重高精仪器联合鉴定</p>
+    <div class="container">
+        <h2 class="section-title">精选二手奢品回收档案 (共 1400 件)</h2>
+        
+        <!-- 1400 个作品动态网格 -->
+        <div class="gallery-grid" id="luxuryGrid">
+            <!-- JS 自动生成全部内容 -->
         </div>
     </div>
 
-    <!-- 500款奢华作品大图展示区 -->
-    <section class="gallery" id="works">
-        <div class="section-header">
-            <div>
-                <h2 class="section-title">奢华回收经典图库 (共 500 款大图)</h2>
-                <p class="section-desc" style="margin-top: 5px;">支持任意图片格式。把你的图片命名为 1.png, 2.jpg 等丢进文件夹即可完美展示。</p>
-            </div>
-        </div>
-
-        <div class="grid" id="card-grid">
-            <!-- 动态生成 500 个超大图卡片矩阵 -->
-            <script>
-                // 品牌与品类模拟数据，让500款商品信息更加逼真丰富
-                const brands = ["CHANEL 经典香奈儿", "HERMÈS 爱马仕手袋", "LOUIS VUITTON 老花系列", "ROLEX 劳力士腕表", "PATEK PHILIPPE 百达翡丽", "CARTIER 卡地亚珠宝", "DIOR 迪奥马鞍包", "PRADA 普拉达经典"];
-                
-                for(let i = 1; i <= 500; i++) {
-                    const brandName = brands[(i - 1) % brands.length];
-                    // 模拟随机回收参考价
-                    const randomPrice = (Math.random() * 5 + 0.8).toFixed(1) * 10000;
-
-                    document.write(`
-                        <div class="card">
-                            <div class="card-img-wrap">
-                                <img src="${i}.png" alt="奢侈品回收 ${i}" class="card-img" onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'300\' height=\'320\' viewBox=\'0 0 300 320\'%3E%3Crect width=\'300\' height=\'320\' fill=\'%23161616\'/%3E%3Ctext x=\'50%25\' y=\'45%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23d4af37\' font-family=\'sans-serif\' font-size=\'16px\' font-weight=\'bold\'%3E[ 奢侈品大图 #${i} ]%3C/text%3E%3Ctext x=\'50%25\' y=\'55%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23666\' font-family=\'sans-serif\' font-size=\'12px\'%3E请放入 ${i}.png 或 ${i}.jpg%3C/text%3E%3C/svg%3E';">
-                                <div class="price-tag">回收参考: ¥${randomPrice}</div>
-                            </div>
-                            <div class="card-info">
-                                <h3 class="card-title">${brandName} #${i}</h3>
-                                <p class="card-desc">99新全套配件齐全，专业师傅当面鉴定无瑕疵。</p>
-                                <a href="#valuation" class="card-btn">申请同款高价回收</a>
-                            </div>
-                        </div>
-                    `);
-                }
-            </script>
-        </div>
-    </section>
-
-    <!-- 底部全套按钮信息与页脚 -->
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h4>回收品类导航</h4>
-                <ul>
-                    <li><a href="#works">顶级名牌箱包回收</a></li>
-                    <li><a href="#works">世界名表典当置换</a></li>
-                    <li><a href="#works">高端钻石珠宝回收</a></li>
-                    <li><a href="#works">限量潮玩配饰回收</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>新手回收指南</h4>
-                <ul>
-                    <li><a href="#valuation">如何在线免费估价</a></li>
-                    <li><a href="#process">顺丰保邮寄送流程</a></li>
-                    <li><a href="#process">验货标准与打款说明</a></li>
-                    <li><a href="#contact">隐私保护与正品承诺</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>关于我们</h4>
-                <ul>
-                    <li><a href="#contact">品牌故事与资质</a></li>
-                    <li><a href="#stores">全国实体门店查询</a></li>
-                    <li><a href="#contact">加入鉴定师团队</a></li>
-                    <li><a href="#contact">商务合作与渠道</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>尊贵客户热线</h4>
-                <p style="color: var(--gold); font-size: 1.2rem; font-weight: bold; margin-bottom: 8px;">400-888-9999</p>
-                <p style="font-size: 0.85rem; margin-bottom: 15px;">7x24小时全天候专业在线鉴定评估</p>
-                <a href="#valuation" class="btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">快速联系客服</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2026 LUXURY RECYCLE CENTER. All Rights Reserved. 顶级奢侈品回收评估中心版权所有</p>
-        </div>
+    <footer>
+        &copy; 2026 LUXURY RECYCLE International. All Rights Reserved. 专业正品鉴定，支持当面回收。
     </footer>
+
+    <script>
+        // 奢品分类或品名备选库，用于为 1400 件商品自动匹配逼真的大牌名称
+        const brands = ["【全新全套】经典款手袋", "【99新】限量版单肩包", "【收藏级】高级定制皮具", "【95新】经典老花系列", "【专柜正品】时尚奢华配饰", "【极品成色】经典商务公文包"];
+        
+        const totalItems = 1400;
+        const grid = document.getElementById('luxuryGrid');
+        const fragment = document.createDocumentFragment();
+
+        for (let i = 1; i <= totalItems; i++) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+
+            // 随机匹配一个逼真的奢品标题和价格
+            const brandTitle = brands[(i - 1) % brands.length];
+            const randomPrice = (Math.random() * 3 + 0.5).toFixed(1) + " 万";
+
+            // 对应图片命名：1.png, 2.png ... 1400.png
+            card.innerHTML = `
+                <div class="product-img-box">
+                    <span class="tag-badge">正品鉴定</span>
+                    <img src="${i}.png" alt="二手奢品 #${i}" loading="lazy">
+                </div>
+                <div class="product-info">
+                    <div class="product-title">${brandTitle} #${i}</div>
+                    <div class="product-details">
+                        <span>成色: 99新</span>
+                        <span class="price">估价: ${randomPrice}</span>
+                    </div>
+                    <a href="javascript:alert('正在为您连接鉴定师，编号：#${i}');" class="action-btn">立即询价 / 鉴定</a>
+                </div>
+            `;
+
+            fragment.appendChild(card);
+        }
+
+        grid.appendChild(fragment);
+    </script>
 
 </body>
 </html>
