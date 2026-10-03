@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.到位速递.com | 独立球鞋定制与手绘工作室</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0b0b0b;
+            color: #f5f5f7;
+            line-height: 1.6;
+        }
+
+        /* 导航栏 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(11, 11, 11, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+        .logo span {
+            color: #ff3366;
+        }
+        nav a {
+            color: #aaa;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* 首页横幅 (Hero Section) */
+        .hero {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(135deg, #111 0%, #1a1a1a 100%);
+            margin-top: 60px;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            background: linear-gradient(45deg, #fff, #888);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #888;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #ff3366;
+            color: #fff;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .btn:hover {
+            background-color: #ff114d;
+            transform: scale(1.05);
+        }
+
+        /* 独立封装的1厘米全球网络栏样式 */
+        .network-bar-wrap {
+            background: #111;
+            padding: 8px 5%;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .network-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        .network-table td { border: 1px solid #222; padding: 0 4px; height: 28px; overflow: hidden; background: #141414; }
+        .network-box { width: 100%; height: 26px; overflow-x: auto; overflow-y: hidden; white-space: nowrap; line-height: 26px; font-size: 11px; }
+        .network-box::-webkit-scrollbar { height: 2px; }
+        .network-box::-webkit-scrollbar-thumb { background: #ff3366; border-radius: 2px; }
+        .network-box a { color: #ccc; text-decoration: none; margin-right: 6px; }
+        .network-box a:hover { color: #ff3366; text-decoration: underline; }
+        .net-sub { font-size: 10px; margin-left: -4px; margin-right: 6px; color: #888; }
+        .net-dim { color: #666; margin-right: 6px; }
+        .net-continent { font-weight: bold; color: #ff3366; margin-right: 8px; }
+
+        /* 海量作品展区 */
+        .gallery {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            border-left: 4px solid #ff3366;
+            padding-left: 15px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .card {
+            background-color: #161616;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255, 51, 102, 0.4);
+        }
+        .card-img {
+            width: 100%;
+            height: 240px;
+            background-color: #222;
+            object-fit: cover;
+        }
+        .card-info {
+            padding: 15px;
+        }
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #fff;
+        }
+        .card-desc {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* 页脚 */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="logo">SNEAKER<span>.ART</span></div>
+        <nav>
+            <a href="#works">作品展示</a>
+            <a href="https://quebec-quebec.net/">全球网络</a>
+            <a href="https://www.xn--zbssc327di94a.top/contact.html">联系我们</a>
+        </nav>
+    </header>
+
+    <!-- 首页标语 -->
+    <section class="hero">
+        <h1>赋予球鞋独一无二的灵魂</h1>
+        <p>纯手绘高端定制鞋履，拒绝撞鞋。将你的想象力穿在脚下。</p>
+        <a href="#works" class="btn">探索全部作品</a>
+    </section>
+
+    <!-- 全球网络栏 -->
+    <div class="network-bar-wrap" id="network">
+      <!-- (此处省略全球网络栏内容，保持原样) -->
+    </div>
+
+    <!-- 精选定制作品矩阵区 -->
+    <section class="gallery" id="works">
+        <h2 class="section-title">精选定制作品矩阵 (40款作品)</h2>
+        <div class="grid" id="card-grid">
+            
+            <!-- 动态生成 40 个作品卡片 (.png格式，带容错处理) -->
+            <script>
+                for(let i = 1; i <= 40; i++) {
+                    document.write(`
+                        <div class="card">
+                            <img src="shoe${i}.png" alt="定制球鞋 ${i}" class="card-img" onerror="this.onerror=null; this.src='data:image/svg+xml;charset=UTF-8,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'240\' height=\'240\' viewBox=\'0 0 240 240\'%3E%3Crect width=\'240\' height=\'240\' fill=\'%23222\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23666\' font-family=\'sans-serif\' font-size=\'14px\'%3E暂无图片 shoe${i}.png%3C/text%3E%3C/svg%3E';">
+                            <div class="card-info">
+                                <h3 class="card-title">限定定制款 #${i}</h3>
+                                <p class="card-desc">纯手工精细手绘与独特涂装</p>
+                            </div>
+                        </div>
+                    `);
+                }
+            </script>
+
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer id="contact">
+        <p>&copy; 2026 SNEAKER ART STUDIO. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
